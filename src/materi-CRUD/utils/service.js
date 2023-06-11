@@ -1,5 +1,10 @@
 import storageManager from "./storageManager";
 
+// {
+//   id: 1,
+//   title: "course title",
+//   description: "course description",
+// },
 const addCourse = (payload) => {
   const currItem = storageManager.get();
   if (currItem !== null) {

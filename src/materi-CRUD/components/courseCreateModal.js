@@ -3,14 +3,18 @@ import { Button, Modal, Form } from "react-bootstrap";
 
 const CourseCreateModal = ({ show, handleClose, handleSubmit }) => {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [hargaBeli, sethargaBeli] = useState("");
+  const [hargaJual, sethargaJual] = useState("");
+  const [stok, setstok] = useState("");
 
   const onSubmit = () => {
     const timeStamp = Math.floor(Date.now() / 1000);
     const payload = {
       id: timeStamp,
       title,
-      description,
+      hargaBeli,
+      hargaJual,
+      stok,
     };
     handleSubmit(payload);
   };
@@ -27,32 +31,32 @@ const CourseCreateModal = ({ show, handleClose, handleSubmit }) => {
             <Form.Control
               onChange={(e) => setTitle(e.target.value)}
               type="text"
-              placeholder="Enter title"
+              placeholder="Masukkan Nama Barang"
             />
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Harga Jual</Form.Label>
+            <Form.Label>Harga Beli</Form.Label>
             <Form.Control
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => sethargaBeli(e.target.value)}
               as="textarea"
-              placeholder="Description"
+              placeholder="Masukkan Harga Beli"
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Harga Beli</Form.Label>
+            <Form.Label>Harga Jual</Form.Label>
             <Form.Control
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => sethargaJual(e.target.value)}
               as="textarea"
-              placeholder="Description"
+              placeholder="Masukkan Harga Jual"
             />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Stok</Form.Label>
             <Form.Control
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => setstok(e.target.value)}
               as="textarea"
-              placeholder="Description"
+              placeholder="Masukkan Jumlah stok"
             />
           </Form.Group>
         </Form>

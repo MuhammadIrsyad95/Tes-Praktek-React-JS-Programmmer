@@ -1,8 +1,12 @@
+// Example
 const example = [
   {
     id: 1,
     title: "course title",
     description: "course description",
+    hargaJual: "harga jual",
+    hargaBeli: "harga beli",
+    stok: "jumlah stok",
   },
 ];
 

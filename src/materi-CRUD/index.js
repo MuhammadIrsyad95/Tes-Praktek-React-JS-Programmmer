@@ -94,10 +94,9 @@ const MateriCURD = () => {
                   <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{item.title}</td>
-                    <td>{item.description}</td>
-                    <td>{item.description}</td>
-                    <td>{item.description}</td>
-
+                    <td>{item.hargaBeli}</td>
+                    <td>{item.hargaJual}</td>
+                    <td>{item.stok}</td>
                     <td>
                       <Button
                         variant={"warning"}
