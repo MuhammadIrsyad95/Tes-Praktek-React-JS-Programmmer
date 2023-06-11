@@ -11,7 +11,7 @@ const ProductPage = () => {
 
     setList(response.data);
 
-//     console.log("response", response);
+    //     console.log("response", response);
   };
 
   const goToDetail = (prodId) => {
@@ -35,7 +35,9 @@ const ProductPage = () => {
             <Card.Body>
               <Card.Title> {product.title}</Card.Title>
               <Card.Text>{product.description}</Card.Text>
-              <Card.Text> Harga = Rp.{product.price},-</Card.Text>
+              <Card.Text> Beli = Rp.{product.sell},-</Card.Text>
+              <Card.Text> Jual = Rp.{product.buy},-</Card.Text>
+
               {/* <Button variant="primary">Go somewhere</Button> */}
             </Card.Body>
           </Card>

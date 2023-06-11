@@ -20,6 +20,7 @@ const DetailPage = () => {
   useEffect(() => {
     fetchProductDetail(id);
   }, []);
+
   return (
     <Container style={{ marginTop: "100px" }}>
       {loading ? (
@@ -38,7 +39,9 @@ const DetailPage = () => {
           <Col md={4}>
             <h3>{entity.title}</h3>
             <p>{entity.description}</p>
-            <h5>Harga Beli = Rp.{entity.price},-</h5>
+            <h5>Harga Beli = Rp.{entity.buy},-</h5>
+            <h5>Harga Jual = Rp.{entity.sell},-</h5>
+            <h5>Stok = {entity.stock}</h5>
 
             <Button
               onClick={() => dispatch(addItem(entity))}

@@ -28,18 +28,6 @@ export const productSlice = createSlice({
       .addCase(productAct.getAll.rejected, (state, action) => {
         state.loading = true;
         state.error = action.payload;
-      })
-
-      .addCase(productAct.getDetail.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(productAct.getDetail.fulfilled, (state, action) => {
-        state.entity = action.payload;
-        state.loading = false;
-      })
-      .addCase(productAct.getDetail.rejected, (state, action) => {
-        state.loading = true;
-        state.error = action.payload;
       }),
 });
 export default productSlice.reducer;
