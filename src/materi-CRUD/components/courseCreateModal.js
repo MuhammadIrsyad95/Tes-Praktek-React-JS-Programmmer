@@ -23,16 +23,32 @@ const CourseCreateModal = ({ show, handleClose, handleSubmit }) => {
       <Modal.Body>
         <Form>
           <Form.Group className="mb-3">
-            <Form.Label>Title</Form.Label>
+            <Form.Label>Nama Barang</Form.Label>
             <Form.Control
               onChange={(e) => setTitle(e.target.value)}
               type="text"
-              placeholder="Enter title" 
+              placeholder="Enter title"
             />
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Description</Form.Label>
+            <Form.Label>Harga Jual</Form.Label>
+            <Form.Control
+              onChange={(e) => setDescription(e.target.value)}
+              as="textarea"
+              placeholder="Description"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Harga Beli</Form.Label>
+            <Form.Control
+              onChange={(e) => setDescription(e.target.value)}
+              as="textarea"
+              placeholder="Description"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Stok</Form.Label>
             <Form.Control
               onChange={(e) => setDescription(e.target.value)}
               as="textarea"

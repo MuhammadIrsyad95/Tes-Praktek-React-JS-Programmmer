@@ -82,7 +82,9 @@ const MateriCURD = () => {
               <tr>
                 <td>No</td>
                 <td>Nama</td>
-                <td>Description</td>
+                <td>Harga Beli</td>
+                <td>Harga jual</td>
+                <td>Stok</td>
                 <td>Action</td>
               </tr>
             </thead>
@@ -93,6 +95,9 @@ const MateriCURD = () => {
                     <td>{index + 1}</td>
                     <td>{item.title}</td>
                     <td>{item.description}</td>
+                    <td>{item.description}</td>
+                    <td>{item.description}</td>
+
                     <td>
                       <Button
                         variant={"warning"}

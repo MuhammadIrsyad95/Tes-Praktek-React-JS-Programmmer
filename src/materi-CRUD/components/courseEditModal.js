@@ -37,7 +37,25 @@ const CourseEditModal = ({ show, handleClose, handleSubmit, data }) => {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Description</Form.Label>
+            <Form.Label>Harga Beli</Form.Label>
+            <Form.Control
+              onChange={(e) => setDescription(e.target.value)}
+              as="textarea"
+              placeholder="Description"
+              defaultValue={description}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Harga Jual</Form.Label>
+            <Form.Control
+              onChange={(e) => setDescription(e.target.value)}
+              as="textarea"
+              placeholder="Description"
+              defaultValue={description}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Stok</Form.Label>
             <Form.Control
               onChange={(e) => setDescription(e.target.value)}
               as="textarea"
