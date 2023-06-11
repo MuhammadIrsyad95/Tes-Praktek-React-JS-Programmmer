@@ -6,6 +6,11 @@ const CourseCreateModal = ({ show, handleClose, handleSubmit }) => {
   const [hargaBeli, sethargaBeli] = useState("");
   const [hargaJual, sethargaJual] = useState("");
   const [stok, setstok] = useState("");
+  // const [foto, setFoto] = useState(null);
+
+  // const handleFotoChange = (e) => {
+  //   setFoto(e.target.files[0]);
+  // };
 
   const onSubmit = () => {
     const timeStamp = Math.floor(Date.now() / 1000);
@@ -15,13 +20,14 @@ const CourseCreateModal = ({ show, handleClose, handleSubmit }) => {
       hargaBeli,
       hargaJual,
       stok,
+      // foto: null,
     };
     handleSubmit(payload);
   };
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Create Course</Modal.Title>
+        <Modal.Title>Buat List Barang</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
@@ -59,6 +65,15 @@ const CourseCreateModal = ({ show, handleClose, handleSubmit }) => {
               placeholder="Masukkan Jumlah stok"
             />
           </Form.Group>
+
+          {/* <Form.Group className="mb-3">
+            <Form.Label>Foto</Form.Label>
+            <Form.Control
+              onChange={handleFotoChange}
+              type="file"
+              accept="image/*"
+            />
+          </Form.Group> */}
         </Form>
       </Modal.Body>
 

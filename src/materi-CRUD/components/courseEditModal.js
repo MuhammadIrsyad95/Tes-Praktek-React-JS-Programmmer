@@ -27,13 +27,13 @@ const CourseEditModal = ({ show, handleClose, handleSubmit, data }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Edit Course</Modal.Title>
+        <Modal.Title>Ubah Barang</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
         <Form>
           <Form.Group className="mb-3">
-            <Form.Label>Title</Form.Label>
+            <Form.Label>Nama Barang</Form.Label>
             <Form.Control
               onChange={(e) => setTitle(e.target.value)}
               type="text"

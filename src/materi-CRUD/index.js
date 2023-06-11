@@ -75,7 +75,7 @@ const MateriCURD = () => {
             variant={"primary"}
             onClick={toggleCreateModal}
           >
-            Create
+            Buat List Barang
           </Button>
           <Table>
             <thead>
@@ -85,6 +85,7 @@ const MateriCURD = () => {
                 <td>Harga Beli</td>
                 <td>Harga jual</td>
                 <td>Stok</td>
+                {/* <td>Foto</td> */}
                 <td>Action</td>
               </tr>
             </thead>
@@ -97,6 +98,7 @@ const MateriCURD = () => {
                     <td>{item.hargaBeli}</td>
                     <td>{item.hargaJual}</td>
                     <td>{item.stok}</td>
+                    {/* <td>{item.foto}</td> */}
                     <td>
                       <Button
                         variant={"warning"}
