@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Container, Image, Row, Col, Button, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addItem } from "../../store/cart/slice";
 import { getDetail } from "../../store/product/action";
 import httpService from "../../utils/service";
 
@@ -15,6 +16,7 @@ const DetailPage = () => {
     //console.log("response", response);//
     await dispatch(getDetail(prodId));
   };
+
   useEffect(() => {
     fetchProductDetail(id);
   }, []);
@@ -37,7 +39,13 @@ const DetailPage = () => {
             <h3>{entity.title}</h3>
             <p>{entity.description}</p>
             <h5>Harga Beli = Rp.{entity.price},-</h5>
-            <Button variant={"success"}>+ Tambahkan Ke Keranjang</Button>
+
+            <Button
+              onClick={() => dispatch(addItem(entity))}
+              variant={"success"}
+            >
+              + Tambahkan Ke Keranjang
+            </Button>
           </Col>
         </Row>
       )}
