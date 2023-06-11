@@ -69,7 +69,7 @@ const MateriCURD = () => {
     <Container style={{ marginTop: "50px" }}>
       <Row>
         <Col md={{ span: 8, offset: 2 }}>
-          <h3>React js Pro</h3>
+          <h3>React js Programmer - CRUD</h3>
           <Button
             style={{ marginBottom: "24px", marginTop: "24px" }}
             variant={"primary"}

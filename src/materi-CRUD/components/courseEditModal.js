@@ -3,18 +3,24 @@ import { Button, Modal, Form } from "react-bootstrap";
 
 const CourseEditModal = ({ show, handleClose, handleSubmit, data }) => {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [hargaBeli, sethargaBeli] = useState("");
+  const [hargaJual, sethargaJual] = useState("");
+  const [stok, setstok] = useState("");
 
   const onSubmit = () => {
     const payload = {
       id: data.id,
       title,
-      description,
+      hargaBeli,
+      hargaJual,
+      stok,
     };
     handleSubmit(payload);
   };
   useEffect(() => {
-    setDescription(data.description);
+    sethargaBeli(data.hargaBeli);
+    sethargaJual(data.hargaJual);
+    setstok(data.stok);
     setTitle(data.title);
   }, [data]);
 
@@ -39,28 +45,28 @@ const CourseEditModal = ({ show, handleClose, handleSubmit, data }) => {
           <Form.Group className="mb-3">
             <Form.Label>Harga Beli</Form.Label>
             <Form.Control
-              onChange={(e) => setDescription(e.target.value)}
-              as="textarea"
-              placeholder="Description"
-              defaultValue={description}
+              onChange={(e) => sethargaBeli(e.target.value)}
+              type="number"
+              placeholder="Ubah Harga Beli"
+              defaultValue={hargaBeli}
             />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Harga Jual</Form.Label>
             <Form.Control
-              onChange={(e) => setDescription(e.target.value)}
-              as="textarea"
-              placeholder="Description"
-              defaultValue={description}
+              onChange={(e) => sethargaJual(e.target.value)}
+              type="number"
+              placeholder="Ubah Harga Jual"
+              defaultValue={hargaJual}
             />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Stok</Form.Label>
             <Form.Control
-              onChange={(e) => setDescription(e.target.value)}
-              as="textarea"
-              placeholder="Description"
-              defaultValue={description}
+              onChange={(e) => setstok(e.target.value)}
+              type="number"
+              placeholder="Ubah Stok"
+              defaultValue={stok}
             />
           </Form.Group>
         </Form>

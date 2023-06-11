@@ -39,7 +39,7 @@ const CourseCreateModal = ({ show, handleClose, handleSubmit }) => {
             <Form.Label>Harga Beli</Form.Label>
             <Form.Control
               onChange={(e) => sethargaBeli(e.target.value)}
-              as="textarea"
+              type="number"
               placeholder="Masukkan Harga Beli"
             />
           </Form.Group>
@@ -47,7 +47,7 @@ const CourseCreateModal = ({ show, handleClose, handleSubmit }) => {
             <Form.Label>Harga Jual</Form.Label>
             <Form.Control
               onChange={(e) => sethargaJual(e.target.value)}
-              as="textarea"
+              type="number"
               placeholder="Masukkan Harga Jual"
             />
           </Form.Group>
@@ -55,7 +55,7 @@ const CourseCreateModal = ({ show, handleClose, handleSubmit }) => {
             <Form.Label>Stok</Form.Label>
             <Form.Control
               onChange={(e) => setstok(e.target.value)}
-              as="textarea"
+              type="number"
               placeholder="Masukkan Jumlah stok"
             />
           </Form.Group>
