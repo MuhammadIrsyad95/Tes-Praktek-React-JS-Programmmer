@@ -7,12 +7,32 @@ const example = [
     hargaJual: "harga jual",
     hargaBeli: "harga beli",
     stok: "jumlah stok",
+    foto: {
+      url: "URL foto",
+      filename: "nama file",
+      fileType: "tipe file",
+    },
+    // foto: null,
   },
 ];
 
 const storageKey = "courseCRUD";
 
 const setItem = (value) => {
+  const dataWithPhotoInfo = value.map((item) => {
+    if (item.foto) {
+      const { url, filename, fileType } = item.foto;
+      return {
+        ...item,
+        foto: {
+          url,
+          filename,
+          fileType,
+        },
+      };
+    }
+    return item;
+  });
   const valueToString = JSON.stringify(value);
   localStorage.setItem(storageKey, valueToString);
 };

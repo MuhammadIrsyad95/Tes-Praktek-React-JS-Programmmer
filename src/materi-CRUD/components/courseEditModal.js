@@ -6,6 +6,8 @@ const CourseEditModal = ({ show, handleClose, handleSubmit, data }) => {
   const [hargaBeli, sethargaBeli] = useState("");
   const [hargaJual, sethargaJual] = useState("");
   const [stok, setstok] = useState("");
+  const [foto, setFoto] = useState(null);
+  const [fotoURL, setFotoURL] = useState("");
 
   const onSubmit = () => {
     const payload = {
@@ -14,6 +16,7 @@ const CourseEditModal = ({ show, handleClose, handleSubmit, data }) => {
       hargaBeli,
       hargaJual,
       stok,
+      foto: fotoURL,
     };
     handleSubmit(payload);
   };
@@ -21,9 +24,32 @@ const CourseEditModal = ({ show, handleClose, handleSubmit, data }) => {
     sethargaBeli(data.hargaBeli);
     sethargaJual(data.hargaJual);
     setstok(data.stok);
+    setFoto(data.foto);
+    setFotoURL(data.foto);
     setTitle(data.title);
   }, [data]);
+  const handleFotoChange = (e) => {
+    const selectedFile = e.target.files[0];
 
+    // Mengecek format file
+    const allowedTypes = ["image/jpeg", "image/png"];
+    if (allowedTypes.includes(selectedFile.type)) {
+      // Mengecek ukuran file
+      if (selectedFile.size <= 100 * 1024) {
+        setFoto(selectedFile);
+
+        // Membuat URL untuk foto yang akan ditampilkan
+        const fotoObjectURL = URL.createObjectURL(selectedFile);
+        setFotoURL(fotoObjectURL);
+      } else {
+        alert("Ukuran file foto terlalu besar. Maksimal 100KB.");
+      }
+    } else {
+      alert(
+        "Format file foto tidak valid. Hanya format JPG dan PNG yang diizinkan."
+      );
+    }
+  };
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -69,6 +95,14 @@ const CourseEditModal = ({ show, handleClose, handleSubmit, data }) => {
               defaultValue={stok}
             />
           </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Foto Barang</Form.Label>
+            <Form.Control
+              onChange={handleFotoChange}
+              type="file"
+              accept="image/*"
+            />
+          </Form.Group>
         </Form>
       </Modal.Body>
 
@@ -77,7 +111,7 @@ const CourseEditModal = ({ show, handleClose, handleSubmit, data }) => {
           Close
         </Button>
         <Button onClick={onSubmit} variant="primary">
-          Edit Course
+          Edit
         </Button>
       </Modal.Footer>
     </Modal>

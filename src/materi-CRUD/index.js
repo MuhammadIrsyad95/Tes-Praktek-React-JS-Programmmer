@@ -81,11 +81,12 @@ const MateriCURD = () => {
             <thead>
               <tr>
                 <td>No</td>
-                <td>Nama</td>
+                <td>Nama Barang</td>
                 <td>Harga Beli</td>
                 <td>Harga jual</td>
                 <td>Stok</td>
-                {/* <td>Foto</td> */}
+                <td>Foto Barang</td>
+
                 <td>Action</td>
               </tr>
             </thead>
@@ -98,6 +99,11 @@ const MateriCURD = () => {
                     <td>{item.hargaBeli}</td>
                     <td>{item.hargaJual}</td>
                     <td>{item.stok}</td>
+                    <td>
+                      {item.foto && (
+                        <img src={item.foto.url} alt={item.foto.filename} />
+                      )}
+                    </td>
                     {/* <td>{item.foto}</td> */}
                     <td>
                       <Button
