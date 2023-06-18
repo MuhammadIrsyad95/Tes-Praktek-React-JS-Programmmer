@@ -6,7 +6,7 @@ import MateriRestRouter from "./materi-REST-ROUTER";
 import MateriRedux from "./materi-Redux";
 
 function App() {
-  return <MateriCURD />;
+  return <MateriRedux />;
 }
 
 export default App;

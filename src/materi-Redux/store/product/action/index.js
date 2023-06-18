@@ -14,6 +14,7 @@ export const getDetail = createAsyncThunk(
   "feat/getDetailProduct",
   async (productId) => {
     try {
+      console.log("productID", productId);
       const response = await httpService.get(`/product/${productId}`);
       return response.data;
     } catch (error) {
